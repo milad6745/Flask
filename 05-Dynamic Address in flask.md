@@ -28,3 +28,24 @@ if __name__ == '__main__':
 
 if __name__ == '__main__':
     app.run()
+
+استفاده از مقدار های فلوت و intiger در url dynamic
+
+```
+from flask import Flask
+
+app = Flask(__name__)
+
+
+@app.route("/user/<int:id>")
+def number(id):
+    return f'this number is {id}'
+
+
+@app.route("/user/<float:id>")
+def number_float(id):
+    return f'this number is float {id}'
+
+if __name__ == "__main__":
+    app.run(debug=True)
+```

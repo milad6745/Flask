@@ -23,7 +23,7 @@ if __name__ == '__main__':
 
 در این مثال، آدرس `/user/<username>` و `/post/<int:post_id>` آدرس‌های پویا هستند. ورودی‌هایی که به این آدرس‌ها ارسال می‌شوند، به صورت پارامترهای متغیر `username` و `post_id` به توابع `show_user_profile` و `show_post` منتقل می‌شوند.
 
-به عنوان مثال، آدرس `/user/john` به تابع `show_user_profile` با پارامتر `username='john'` ارسال می‌شود و آدرس `/post/123` به تابع `show_post` با پارامتر `post_id=123` ارسال می‌شود.
+به عنوان مثال، آدرس `/user/john` به تابع `show_user_profile` با پارامتر `username='john'` ارسال می‌شود 
     return f"Post ID: {post_id}"
 
 if __name__ == '__main__':

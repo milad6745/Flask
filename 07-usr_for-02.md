@@ -1,4 +1,3 @@
-با کمال میلای زیر، کد شما را خط به خط تحلیل می‌کنم:
 
 ```python
 from flask import Flask, redirect, url_for
@@ -33,7 +32,6 @@ if __name__ == '__main__':
     app.run(debug=True, port=6060)
 ```
 
-البته، در این حالت از نقطه به جای اعداد استفاده می‌کنم:
 
  `from flask import Flask, redirect, url_for`. 
  

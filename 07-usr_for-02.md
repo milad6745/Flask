@@ -35,30 +35,58 @@ if __name__ == '__main__':
 
 خلاصه:
 
-1. `from flask import Flask, redirect, url_for`: ابتدا ما از Flask و دو تابع `redirect` و `url_for` از فریمورک Flask وارد می‌کنیم.
+1. `from flask import Flask, redirect, url_for`:
+2.
+3.   ابتدا ما از Flask و دو تابع `redirect` و `url_for` از فریمورک Flask وارد می‌کنیم.
 
-2. `app = Flask(__name__)`: یک نمونه از کلاس Flask با نام `app` ایجاد می‌کنیم. این نمونه به عنوان اپلیکیشن اصلی برای وبسایت ما عمل می‌کند.
+4. `app = Flask(__name__)`:
+5.
+6. یک نمونه از کلاس Flask با نام `app` ایجاد می‌کنیم. این نمونه به عنوان اپلیکیشن اصلی برای وبسایت ما عمل می‌کند.
 
-3. `@app.route('/')`: این خط کد به Flask می‌گوید که تابع `index` باید به مسیر '/' پاسخ دهد.
+7. `@app.route('/')`:
+8.
+9.   این خط کد به Flask می‌گوید که تابع `index` باید به مسیر '/' پاسخ دهد.
 
-4. `def index():`: تعریف تابع `index` که درخواست‌هایی به مسیر اصلی ('/') را پردازش می‌کند.
+10. `def index():`:
 
-5. `return 'Welcome to my website!'`: تابع `index` پیام 'Welcome to my website!' را به عنوان پاسخ به درخواست مربوطه برمی‌گرداند.
+تعریف تابع `index` که درخواست‌هایی به مسیر اصلی ('/') را پردازش می‌کند.
 
-6. `@app.route('/user/<username>')`: این خط کد به Flask می‌گوید که تابع `get_user` باید به مسیر '/user/<username>' پاسخ دهد، که `<username>` یک پارامتر داینامیک است.
+11. `return 'Welcome to my website!'`:
+12.
+13. تابع `index` پیام 'Welcome to my website!' را به عنوان پاسخ به درخواست مربوطه برمی‌گرداند.
 
-7. `def get_user(username):`: تعریف تابع `get_user` که مقدار `username` را از URL دریافت می‌کند.
+14. `@app.route('/user/<username>')`:
+15.
+16. این خط کد به Flask می‌گوید که تابع `get_user` باید به مسیر '/user/<username>' پاسخ دهد، که `<username>` یک پارامتر داینامیک است.
 
-8. `if username == "admin":`: در این قسمت، مقدار `username` بررسی می‌شود. اگر برابر با "admin" باشد، کاربر را به مسیر '/admin' هدایت می‌کنیم.
+17. `def get_user(username):`:
+18.
+19. تعریف تابع `get_user` که مقدار `username` را از URL دریافت می‌کند.
 
-9. `return redirect(url_for('admin'))`: اگر کاربر نام کاربری "admin" داشته باشد، از `redirect` و `url_for` برای هدایت کاربر به مسیر '/admin' استفاده می‌شود.
+20. `if username == "admin":`:
+21.
+22. در این قسمت، مقدار `username` بررسی می‌شود. اگر برابر با "admin" باشد، کاربر را به مسیر '/admin' هدایت می‌کنیم.
 
-10. `@app.route('/name/<username>')`: تعریف تابع `user` که به مسیر '/name/<username>' پاسخ می‌دهد.
+23. `return redirect(url_for('admin'))`:
+24.
+25.   اگر کاربر نام کاربری "admin" داشته باشد، از `redirect` و `url_for` برای هدایت کاربر به مسیر '/admin' استفاده می‌شود.
 
-11. `def user(username):`: تعریف تابع `user` که مقدار `username` را به عنوان ورودی می‌پذیرد.
+26. `@app.route('/name/<username>')`:
+27.
+28.   تعریف تابع `user` که به مسیر '/name/<username>' پاسخ می‌دهد.
 
-12. `return f'hello {username}'`: تابع `user` پیام 'hello {username}' را با جایگزینی {username} با نام ورودی مورد نظر برمی‌گرداند.
+29. `def user(username):`:
+30.
+31.   تعریف تابع `user` که مقدار `username` را به عنوان ورودی می‌پذیرد.
 
-13. `if __name__ == '__main__':`: این بخش کد بررسی می‌کند که آیا این اسکریپت به عنوان اسکریپت اصلی اجرا شده است یا به عنوان یک ماژول وارد شده است.
+32. `return f'hello {username}'`:
+33.
+34.   تابع `user` پیام 'hello {username}' را با جایگزینی {username} با نام ورودی مورد نظر برمی‌گرداند.
 
-14. `app.run(debug=True, port=6060)`: در صورتی که اسکریپت به عنوان اسکریپت اصلی اجرا شده باشد، اپلیکیشن Flask اجرا می‌شود با فعال کردن حالت دیباگ (debug=True) و استفاده از درگاه 6060.
+35. `if __name__ == '__main__':`:
+36.
+37.   این بخش کد بررسی می‌کند که آیا این اسکریپت به عنوان اسکریپت اصلی اجرا شده است یا به عنوان یک ماژول وارد شده است.
+
+38. `app.run(debug=True, port=6060)`:
+39.
+40.   در صورتی که اسکریپت به عنوان اسکریپت اصلی اجرا شده باشد، اپلیکیشن Flask اجرا می‌شود با فعال کردن حالت دیباگ (debug=True) و استفاده از درگاه 6060.

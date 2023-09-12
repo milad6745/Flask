@@ -34,37 +34,36 @@ if __name__ == '__main__':
 
 ```
 
-بله، البته که توضیحات بیشتری ارائه می‌دهم:
-
-1. `from flask import Flask, redirect, url_for`:
+ `from flask import Flask, redirect, url_for`:
+   
 ابتدا ما از Flask و دو تابع `redirect` و `url_for` از فریمورک Flask وارد می‌کنیم.
 
-3. `app = Flask(__name__)`:
+ `app = Flask(__name__)`:
 یک نمونه از کلاس Flask با نام `app` ایجاد می‌کنیم. این نمونه به عنوان اپلیکیشن اصلی برای وبسایت ما عمل می‌کند.
 
-5. `@app.route('/')`:
+ `@app.route('/')`:
 این خط کد به Flask می‌گوید که تابع `index` باید به مسیر '/' پاسخ دهد.
 
-7. `def index():`:
+ `def index():`:
 تعریف تابع `index` که درخواست‌هایی به مسیر اصلی ('/') را پردازش می‌کند.
 
-9. `return 'Welcome to my website!'`:
+ `return 'Welcome to my website!'`:
 تابع `index` پیام 'Welcome to my website!' را به عنوان پاسخ به درخواست مربوطه برمی‌گرداند.
 
-11. `@app.route('/user/<username>')`
+ `@app.route('/user/<username>')`
 این خط کد به Flask می‌گوید که تابع `get_user` باید به مسیر '/user/<username>' پاسخ دهد، که `<username>` یک پارامتر داینامیک است.
 
-13. `def get_user(username):`
+ `def get_user(username):`
 تعریف تابع `get_user` که مقدار `username` را از URL دریافت می‌کند.
 
-15. `if username == "admin"
+ `if username == "admin"
 در این قسمت، مقدار `username` بررسی می‌شود. اگر برابر با "admin" باشد، کاربر به مسیر '/admin/' هدایت می‌شود.
 
-17. `return redirect(url_for('admin'))`
+ `return redirect(url_for('admin'))`
 اگر کاربر نام کاربری "admin" داشته باشد، از `redirect` و `url_for` برای هدایت کاربر به مسیر '/admin/' استفاده می‌شود.
 
-19. `@app.route('/admin/')`
+ `@app.route('/admin/')`
 تعریف تابع `admin` که به مسیر '/admin/' پاسخ می‌دهد.
 
-21. `return 'hello admin'
+ `return 'hello admin'
  تابع `admin` پیام 'hello admin' را به عنوان پاسخ به

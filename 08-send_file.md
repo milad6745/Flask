@@ -50,3 +50,34 @@ if __name__ == '__main__':
 ```
 
 9. در نهایت، با استفاده از شرط `if __name__ == '__main__':`، ما اطمینان حاصل می‌کنیم که این اسکریپت به عنوان اسکریپت اصلی اجرا شده است و سپس اپلیکیشن Flask را اجرا می‌کنیم با دیباگ فعال و درگاه 6060.
+
+
+
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+            <form action="http://localhost:6060/succ" method="GET">
+            username :</br> <input type="text" name="username"><br/>
+            password : </br> <input type="password" name="password"><br/>
+            Email: </br><input type="email" name="mail"><br/>
+            Are Youre Sure sign in <input type="checkbox"><br/>
+            
+            <!-- برای اینکه مورد بگذلزیم که کاربر تنها یک گزینه را بتواند انتخاب کند از تایپ رادیو استفاده میکنیم و حتما برای ارتباط موارد باید نام ها را یکی بگزاریم -->
+            what's You Gender ? <br>
+            male<input type="radio" name="gender" value="male">
+            female<input type="radio" name="gender" value="female">
+        
+            <button type="submit" > Submit</button>
+            </form>
+    </p>
+</body>
+</html>
+```

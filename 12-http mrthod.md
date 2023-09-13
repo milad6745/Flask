@@ -36,23 +36,23 @@ return 'This is a PUT request.'
    - این متد برای حذف اطلاعات از سرور استفاده می‌شود.
    - در Flask، شما می‌توانید با استفاده از دکوراتور `@app.route` و متد `methods=['DELETE']` یک مسیر را برای درخواست‌های DELETE تعریف کنید.
    - مثال:
-     ```python
-     @app.route('/deletedata', methods=['DELETE'])
-     def delete_data():
-         return 'This is a DELETE request.'
-     ```
+```python
+@app.route('/deletedata', methods=['DELETE'])
+def delete_data():
+return 'This is a DELETE request.'
+```
 
 5. **استفاده از متدهای چندگانه**:
    - در Flask، شما می‌توانید چندین متد را برای یک مسیر مشخص کنید، به عنوان مثال:
 
-     ```python
-     @app.route('/multiplemethods', methods=['GET', 'POST'])
-     def multiple_methods():
-         if request.method == 'GET':
-             return 'This is a GET request.'
-         elif request.method == 'POST':
-             return 'This is a POST request.'
-     ```
+```python
+@app.route('/multiplemethods', methods=['GET', 'POST'])
+def multiple_methods():
+if request.method == 'GET':
+return 'This is a GET request.'
+elif request.method == 'POST':
+return 'This is a POST request.'
+```
 
    - در این مثال، این مسیر هر دو متد GET و POST را قبول می‌کند و با توجه به نوع درخواست، پاسخ متناظر را ارسال می‌کند.
 

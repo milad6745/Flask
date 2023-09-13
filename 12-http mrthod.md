@@ -59,3 +59,24 @@ return 'This is a POST request.'
 این مقاله به شما اطلاعات کلیدی درباره استفاده از متدهای HTTP در فریمورک Flask ارائه می‌دهد. در صورتی که سوال یا درخواست اطلاعات بیشتری دارید، لطفاً بپرسید.
 
 
+## Example
+```python
+from flask import Flask, redirect, url_for, request
+app = Flask(__name__)
+
+@app.route('/success/<name>')
+def success(name):
+   return 'welcome %s' % name
+
+@app.route('/login',methods = ['POST', 'GET'])
+def login():
+   if request.method == 'POST':
+      user = request.form['nm']
+      return redirect(url_for('success',name = user))
+   else:
+      user = request.args.get('nm')
+      return redirect(url_for('success',name = user))
+
+if __name__ == '__main__':
+   app.run(debug = True)
+```

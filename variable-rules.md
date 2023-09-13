@@ -41,3 +41,20 @@
 **استفاده از متغیرها در لینک‌ها**: شما می‌توانید با استفاده از `url_for` در قالب‌های تمپلیت، لینک‌ها را بر اساس متغیرها ایجاد کنید.
 
 این مطلب اطلاعات مفیدی برای استفاده از متغیرهای URL در فریمورک Flask ارائه می‌دهد. اگر سوال یا درخواست اطلاعات بیشتری دارید، لطفاً بپرسید.
+
+## Example
+```python
+from flask import Flask
+app = Flask(__name__)
+
+@app.route('/blog/<int:postID>')
+def show_blog(postID):
+   return 'Blog Number %d' % postID
+
+@app.route('/rev/<float:revNo>')
+def revision(revNo):
+   return 'Revision Number %f' % revNo
+
+if __name__ == '__main__':
+   app.run()
+```

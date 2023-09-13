@@ -12,7 +12,7 @@
     <h1>لیست نام‌ها</h1>
     <ul>
         {% for name in names %}
-            <li>{{ name }}</li>
+            <li>hi {{ name }} , How Are You?</li>
         {% endfor %}
     </ul>
 </body>
@@ -27,10 +27,12 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/')
-def index():
-    names = ['John', 'Jane', 'Bob', 'Alice']
-    return render_template('names.html', names=names)
+def base():
+    names=['milad','roham','ali','mohammad']
+    return render_template('base.html',names=names)
 ```
+![image](https://github.com/milad6745/Flask/assets/113288076/be189064-69d6-49df-babf-2185a219dad9)
+
 
 در این مثال، متغیر `names` به عنوان داده‌ای که باید در قالب نمایش داده شود به قالب ارسال می‌شود. در قالب HTML، از حلقه `for` استفاده شده تا هر عنصر از لیست `names` را نمایش دهد.
 

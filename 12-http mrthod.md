@@ -7,30 +7,30 @@
    - مثال:
 
 ```python
-     @app.route('/getdata', methods=['GET'])
-     def get_data():
-         return 'This is a GET request.'
+@app.route('/getdata', methods=['GET'])
+def get_data():
+return 'This is a GET request.'
 ```
 
  **POST Method**:
    - این متد برای ارسال اطلاعات به سرور استفاده می‌شود (مثلاً ارسال فرم‌ها).
    - در Flask، شما می‌توانید با استفاده از دکوراتور `@app.route` و متد `methods=['POST']` یک مسیر را برای درخواست‌های POST تعریف کنید.
    - مثال:
-     ```python
-     @app.route('/submitdata', methods=['POST'])
-     def submit_data():
-         return 'This is a POST request.'
-     ```
+```python
+@app.route('/submitdata', methods=['POST'])
+def submit_data():
+return 'This is a POST request.'
+```
 
  **PUT Method**:
    - این متد برای به روزرسانی اطلاعات موجود در سرور استفاده می‌شود.
    - در Flask، شما می‌توانید با استفاده از دکوراتور `@app.route` و متد `methods=['PUT']` یک مسیر را برای درخواست‌های PUT تعریف کنید.
    - مثال:
-     ```python
-     @app.route('/updatedata', methods=['PUT'])
-     def update_data():
-         return 'This is a PUT request.'
-     ```
+```python
+@app.route('/updatedata', methods=['PUT'])
+def update_data():
+return 'This is a PUT request.'
+```
 
  **DELETE Method**:
    - این متد برای حذف اطلاعات از سرور استفاده می‌شود.

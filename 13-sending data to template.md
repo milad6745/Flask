@@ -15,3 +15,25 @@
 **نمایش داده‌ها در صفحه وب**: در این مرحله، داده‌های دریافت شده از فرم در Flask در قالب HTML نمایش داده می‌شوند و کاربران می‌توانند آن‌ها را ببینند.
 
 با استفاده از این مراحل، شما می‌توانید داده‌هایی که کاربران در یک فرم وارد می‌کنند را ارسال کرده و در Flask پردازش کنید و سپس نتیجه را در یک صفحه وب به کاربران نمایش دهید.
+
+
+
+# Example
+
+```python
+from flask import Flask, render_template, request
+app = Flask(__name__)
+
+@app.route('/')
+def student():
+   return render_template('student.html')
+
+@app.route('/result',methods = ['POST', 'GET'])
+def result():
+   if request.method == 'POST':
+      result = request.form
+      return render_template("result.html",result = result)
+
+if __name__ == '__main__':
+   app.run(debug = True)
+```

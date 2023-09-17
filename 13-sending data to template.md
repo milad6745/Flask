@@ -39,7 +39,7 @@ if __name__ == '__main__':
 ```
 
 ### student.htm
-'''html
+```html
 <html>
    <body>
       <form action = "http://localhost:5000/result" method = "POST">

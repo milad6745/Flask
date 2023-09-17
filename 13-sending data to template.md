@@ -37,3 +37,58 @@ def result():
 if __name__ == '__main__':
    app.run(debug = True)
 ```
+student.html
+'''html
+<html>
+   <body>
+      <form action = "http://localhost:5000/result" method = "POST">
+         <p>Name <input type = "text" name = "Name" /></p>
+         <p>Physics <input type = "text" name = "Physics" /></p>
+         <p>Chemistry <input type = "text" name = "chemistry" /></p>
+         <p>Maths <input type ="text" name = "Mathematics" /></p>
+         <p><input type = "submit" value = "submit" /></p>
+      </form>
+   </body>
+</html>
+```
+result html
+```html
+<!doctype html>
+<html>
+   <body>
+      <table border = 1>
+         {% for key, value in result.items() %}
+            <tr>
+               <th> {{ key }} </th>
+               <td> {{ value }} </td>
+            </tr>
+         {% endfor %}
+      </table>
+   </body>
+</html>
+```
+
+این کد یک برنامه Flask ساده را تعریف می‌کند که از دو مسیر استفاده می‌کند. اجزای مهم کد به شرح زیر است:
+
+`from flask import Flask, render_template, request`:
+در اینجا از فریمورک Flask، توابع `render_template` برای نمایش قالب‌های HTML و `request` برای دسترسی به اطلاعات فرم استفاده شده است.
+
+`app = Flask(__name__)`:
+یک نمونه از کلاس Flask ایجاد شده و به متغیر `app` اختصاص داده می‌شود. این نمونه به عنوان اصلی‌ترین قسمت برنامه Flask عمل می‌کند.
+
+`@app.route('/')`:
+این خط کد یک دکوراتور برای مسیر اصلی وب‌سایت ("/") تعریف می‌کند. هنگامی که کاربر به این مسیر دسترسی پیدا می‌کند، تابع `student()` اجرا می‌شود.
+
+`def student():`:
+این تابع، که به عنوان مدیریت کننده مسیر اصلی عمل می‌کند، از تابع `render_template` برای نمایش قالب HTML به نام "student.html" استفاده می‌کند.
+
+`@app.route('/result',methods = ['POST', 'GET'])`:
+این خط کد نیز یک دکوراتور برای مسیر "/result" تعریف می‌کند. این مسیر برای دریافت داده‌های فرم ارسالی از کاربر برای نمایش نتیجه استفاده می‌شود. این مسیر از متد‌های POST و GET پشتیبانی می‌کند.
+
+`def result():`:
+این تابع به عنوان مدیریت کننده مسیر "/result" عمل می‌کند. در صورتی که درخواست از نوع POST باشد، داده‌های فرم از طریق `request.form` دریافت می‌شوند و در متغیر `result` ذخیره می‌شوند. سپس تابع `render_template` برای نمایش قالب HTML به نام "result.html" با استفاده از داده‌های دریافت شده فراخوانی می‌شود.
+
+`if __name__ == '__main__':`:
+این شرط بررسی می‌کند که برنامه به عنوان اصلی اجرا شده باشد و نه به عنوان یک ماژول در داخل یک برنامه دیگر. اگر برنامه به عنوان اصلی اجرا شود، دستور `app.run(debug = True)` فراخوانی می‌شود تا وب‌سرور Flask روشن شود.
+
+با این کد، شما می‌توانید یک برنامه Flask ایجاد کنید که دو مسیر دارد: یک مسیر برای نمایش یک فرم و دیگری برای دریافت و نمایش نتایج ارسالی از فرم.

@@ -38,7 +38,7 @@ if __name__ == '__main__':
    app.run(debug = True)
 ```
 
-student.html
+student.htm
 '''html
 <html>
    <body>
@@ -53,7 +53,7 @@ student.html
 </html>
 ```
 
-result html
+result htm
 ```html
 <!doctype html>
 <html>

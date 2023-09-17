@@ -6,6 +6,7 @@
    - در Flask، شما می‌توانید با استفاده از دکوراتور `@app.route` و متد `methods=['GET']` یک مسیر را برای درخواست‌های GET تعریف کنید.
    - مثال:
 
+
 ```python
 @app.route('/getdata', methods=['GET'])
 def get_data():

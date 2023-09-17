@@ -37,6 +37,7 @@ def result():
 if __name__ == '__main__':
    app.run(debug = True)
 ```
+
 student.html
 '''html
 <html>
@@ -51,6 +52,7 @@ student.html
    </body>
 </html>
 ```
+
 result html
 ```html
 <!doctype html>

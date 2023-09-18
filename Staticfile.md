@@ -23,7 +23,7 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-## index.html
+- index.html
 
 ```
 <!doctype html>
@@ -41,6 +41,7 @@ if __name__ == '__main__':
 </html>
 ```
 
+- hello.js
 ```js
 alert{"سلام این یک هشدار است"}
 ```

@@ -25,7 +25,7 @@ if __name__ == '__main__':
 
 ## index.html
 
-```html
+```
 <!doctype html>
 <html>
     <head>

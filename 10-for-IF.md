@@ -37,3 +37,40 @@ def base():
 در این مثال، متغیر `names` به عنوان داده‌ای که باید در قالب نمایش داده شود به قالب ارسال می‌شود. در قالب HTML، از حلقه `for` استفاده شده تا هر عنصر از لیست `names` را نمایش دهد.
 
 نتیجه این کد، صفحه‌ای است که نام‌ها را به شکل یک لیست نمایش می‌دهد.
+
+## IF
+
+```python
+from flask import Flask, render_template, request, make_response
+
+app = Flask(__name__)
+
+age = 100
+
+@app.route('/')
+def index():
+    # اینجا سن را به فایل لاگین پاس میدهیم
+    return render_template('login.html',age=age)
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+```html
+<!doctype html>
+<html>
+    <head>
+        <title>ورود</title>
+    </head>
+    <body>
+     <p>
+        {% if age < 18%}
+        <li> you are teenager</li>
+        {% else %}
+        <li> You age adult</li>
+        {% endif %}
+     </p>
+    </body>
+</html>
+```

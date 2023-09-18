@@ -22,8 +22,10 @@ def index():
 if __name__ == '__main__':
     app.run(debug=True)
 ```
+
 ## index.html
-'''html
+
+```html
 <!doctype html>
 <html>
     <head>
@@ -38,6 +40,7 @@ if __name__ == '__main__':
     </body>
 </html>
 ```
+
 ```js
 alert{"سلام این یک هشدار است"}
 ```

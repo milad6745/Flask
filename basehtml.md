@@ -50,6 +50,29 @@
    </body>
    </html>
    ```
+```python
+from flask import Flask, render_template, request
+app = Flask(__name__)
+
+
+
+@app.route('/',methods = ['POST', 'GET'])
+def index():
+    return render_template("index.html")
+
+@app.route('/home',methods = ['POST', 'GET'])
+def home():
+    return render_template("home.html")
+
+@app.route('/about')
+def about():
+    return render_template("about.html")
+
+
+if __name__ == '__main__':
+   app.run(debug = True)
+```
+
 
 **استفاده در صفحات دیگر**:
 

@@ -32,6 +32,7 @@ zipp==3.16.2
 
 **بهتر است این پکیج ها را در هنگام گار کردن با فلاسک نصب کنیم**
 
+
 ```bash
 pip install python-dotenv simplejson watchdog
 ```

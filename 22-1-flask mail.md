@@ -75,3 +75,28 @@ def index():
 if __name__ == '__main__':
    app.run(debug = True)
 ```
+
+جدا کردن فایل کاانفیگ در برنامه فوق
+config.py
+
+```python
+class Config:
+    DEBUG = True
+    SECRET_KEY = 'mysecretkey'
+    MAIL_SERVER = 'smtp.gmail.com'
+    MAIL_PORT = 465
+    MAIL_USERNAME = 'yourId@gmail.com'
+    MAIL_PASSWORD = '*****'
+    MAIL_USE_TLS = False
+    MAIL_USE_SSL = True
+```
+app.py
+```python
+from flask import Flask
+from config import Config
+from flask_mail import Mail, Message
+
+app = Flask(__name__)
+app.config.from_object(Config)
+mail = Mail(app)
+```

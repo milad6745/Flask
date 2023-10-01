@@ -99,4 +99,14 @@ from flask_mail import Mail, Message
 app = Flask(__name__)
 app.config.from_object(Config)
 mail = Mail(app)
+
+@app.route("/")
+def index():
+   msg = Message('Hello', sender = 'yourId@gmail.com', recipients = ['id1@gmail.com'])
+   msg.body = "Hello Flask message sent from Flask-Mail"
+   mail.send(msg)
+   return "Sent"
+
+if __name__ == '__main__':
+   app.run(debug = True)
 ```
